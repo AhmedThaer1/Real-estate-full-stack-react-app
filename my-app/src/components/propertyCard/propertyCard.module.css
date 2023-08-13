@@ -1,0 +1,361 @@
+/* .property {
+  height: 100%;
+  width: 330px;
+  background: #fbfbfb;
+  color: #222;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.3);
+  box-shadow: 0px 19px 41px -24px rgba(0,0,0,0.38);
+
+}
+
+.property>.imgContainer {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #222;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.property>.imgContainer>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 150ms all;
+}
+
+.property>.imgContainer>img:hover {
+    scale: 1.035;
+}
+
+.property > .name {
+    text-align: center;
+    font-size: 20px;
+    margin: 0.25rem 0;
+}
+
+.owner {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.property>.details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0 0.5rem;
+}
+
+.property>.details>.priceAndOwner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceAndOwner>.price {
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #0b83e6;
+    padding: 0.25rem;
+}
+
+.moreDetails {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.moreDetails>span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-right: 1px solid #0b83e6;
+    color: #0b83e6;
+    padding-right: 1.25rem;
+}
+
+.moreDetails>span:last-child {
+    border: none;
+}
+
+.desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 0.25rem;
+} */
+
+.priceAnimation {
+    animation: slide-up 0.5s ease-out 0.2s forwards;
+  }
+
+.propertyCardAnimation {
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  .ownerAnimation {
+    animation: slide-left 1s ease-out 0.4s forwards;
+  }
+  
+  .moredetailanimation {
+    animation: fade-in 1s ease-out 0.6s forwards;
+  }
+  
+  .desc-animation {
+    animation: fade-in 1s ease-out 0.8s forwards;
+  }
+  
+  @keyframes fade-in {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  
+  @keyframes slide-left {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+@media only screen and (max-width: 768px) {
+    .property {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        width: 100%; /* Take full width of the viewport */
+        margin: 1rem auto; /* Add some margin for spacing */
+        padding: 1rem; /* Add padding for spacing */
+    }
+
+    .property > .imgContainer {
+        width: 100%; /* Take full width on smaller screens */
+    }
+
+    .property > .details {
+        padding: 0; /* Remove horizontal padding on smaller screens */
+    }
+
+    .priceAndOwner,
+    .moreDetails {
+        justify-content: center; /* Center align elements */
+    }
+
+    .desc {
+        max-width: none; /* Allow description to take full width */
+    }
+}
+
+
+/* Path: my-app\src\components\propertyCard\propertyCard.js */
+
+
+.box {
+  width: calc((100% / 3) - 20px);
+  background-color: rgb(241, 239, 245);
+  position: relative;
+  padding: 2rem;
+}
+
+.box:first-of-type:before {
+  content: "Featured";
+  background-color: #ea723d;
+  color: white;
+  font-size: 13px;
+  padding: 4px 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.box:first-of-type:after {
+  content: "";
+  border-width: 12px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ea723d;
+  position: absolute;
+  left: 72px;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.box .top {
+  position: relative;
+  background-color: ;
+}
+
+.box .top:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 187, 175, 0.829);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.box .top:hover:before {
+  opacity: 1;
+}
+
+.box .top:after {
+  content: "View Property";
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  border: 1px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.box .top:hover:after {
+  opacity: 1;
+}
+
+.box .top img {
+  width: 100%;
+  margin-bottom: -4px;
+}
+
+.box .top span {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.box .top span > .icons {
+  margin-left: 5px;
+}
+
+.box .bottom {
+  padding: 20px 15px;
+  position: relative;
+}
+
+.box:not(:last-of-type) .bottom:before {
+  content: "Hot";
+  background-color: #ea723d;
+  color: white;
+  font-size: 11px;
+  padding: 4px 7px;
+  position: absolute;
+  left: 20px;
+  top: -40px;
+  z-index: 1;
+}
+
+.box .bottom h3 {
+  font-size: 15px;
+}
+
+.box .bottom > p {
+  margin: 15px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #777;
+}
+
+.box .bottom .advants {
+  display: flex;
+}
+
+.box .bottom .advants > div {
+  margin-right: 15px;
+}
+
+.box .bottom .advants > div > span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.box .bottom .advants > div > div {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.box .bottom .advants > div > div .icon {
+  color: #777;
+  font-size: 22px;
+}
+
+.box .bottom .advants > div > div > span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.box .bottom .advants > div > div > span > span {
+  color: #777;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.box .bottom .price {
+  margin-top: 20px;
+}
+
+.box .bottom .price span:first-of-type {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.box .bottom .price span:last-of-type {
+  color: #3eaba1;
+  font-size: 22px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .box {
+      width: 100%;
+      padding: 1rem;
+    }
+}
+
+@media only screen and (min-width: 770px) and (max-width: 922px) {
+    .box {
+      width: calc((100% / 2) - 20px);
+    }
+}

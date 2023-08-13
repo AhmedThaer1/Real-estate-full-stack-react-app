@@ -1,0 +1,60 @@
+.container {
+    margin-top: 5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.titles {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5em;
+}
+
+.titles>h5 {
+    color: #777;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.titles>h2 {
+    color: #333;
+    font-size: 32px;
+}
+
+.yachts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+}
+
+@media only screen and (max-width: 922px) {
+    .yachts {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .yachts {
+            display: flex;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media only screen and (max-width: 550px) {
+            .yachts {
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+.container{
+    height: calc(100vh - 60px);
+    width: 100%;
+    background-image: url('../../assets/estate.jpg');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: darken;
+}
+/* 0b83e6 */
+.wrapper{
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper > h2{
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    margin-bottom: 2.5rem;
+}
+
+.wrapper > h5{
+    color: #efefef;
+    font-size: 36px; 
+    margin-bottom: 3rem;
+}
+
+.wrapper > .options{
+    width: 70%;
+  background-color: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Additional CSS for the labels */
+.options > .selectWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+
+.options > .selectWrapper > select{
+    height: 40px;
+    min-width: 160px;
+    max-width: 200px;
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    background-color: #222;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.options > .selectWrapper > select:first-child{
+    color: #fff;
+}
+
+.options > .selectWrapper > .rangeInput{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+  .options > .selectWrapper > label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0.5rem;
+  }
+  
+
+.options > .button {
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    padding: 0.8rem 0.9rem;
+    border-radius: 50%;
+    font-weight: var(--font-medium);
+    transition: .4s;
+    border: none;
+    outline: none;
+    background: #222;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+ }
+
+ .options > .button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150%;
+    height: 160%;
+    background: #0b83e6;
+    transform-origin: bottom left;
+    transform: skew(40deg) translateX(-60%) translateY(40%);
+    transition: all .5s ease;
+ }
+
+ .options > .button:hover::after {
+    transform: skew(40deg) translateX(110%);
+ }
+
+ .options > .button:hover {
+    box-shadow: 0 8px 24px hsla(var(--hue), 100%, 40%, .25);
+    transform: scale(1.1);
+    color: #222;
+    background-color: #cc1184;
+ }
+
+    .options > .button > .spn {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .options > .button:hover > .spn {
+        color: white;
+    }
+
+    .options > .button > .spn > .searchIcon {
+        font-size: 24px;
+    }
+
+/* RESPONSIVEE */
+@media only screen and (max-width: 768px) {
+    .wrapper > h2{
+        font-size: 20px;
+        white-space: normal;
+    }
+    
+    .wrapper > h5{
+        font-size: 25px; 
+        margin-left: 1rem;
+    }
+
+    .wrapper > .options{
+        width: 90%;
+    }
+}
+    
+
+@media screen and (max-width: 768px) {
+
+    .options {
+        flex-wrap: wrap;
+      }
+
+    .options > .selectWrapper {
+        margin-bottom: 0.5rem; 
+        width: 100%; 
+    }
+  
+    .options > .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+  }

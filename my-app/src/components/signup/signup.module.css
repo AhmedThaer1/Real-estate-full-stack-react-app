@@ -1,0 +1,174 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/estate3.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: #3a86ff
+  }
+  .backButton:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .backButton:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  .backButton:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+
+
+.wrapper {
+    height: 86.5vh;
+    width: 30.5vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.span {
+    display: block;
+    font-size: 20px;
+    white-space: nowrap;
+    position: relative;
+    word-spacing: 1px;
+}
+
+.spanIcon {
+    font-size: 20px;
+    color: #1653d8;
+}
+
+.wrapper>h2 {
+    color: #171097;
+    text-align: center;
+    margin: 2.5rem 0;
+    font-size: 36px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+}
+
+form>input {
+    width: 50%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+form>label {
+    align-self: center;
+    width: 50%;
+    cursor: pointer;
+    transition: 150ms all;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+form>label:hover {
+    color: #444;
+}
+
+form>button {
+    outline: none;
+    background-color: blue;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.5rem 1.25rem;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+form>button:hover {
+    background-color: #fff;
+    border-color: blue;
+    color: blue;
+}
+
+form>p {
+    text-align: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form>p>a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+.error {
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #f00;
+    color: #fff;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    font-weight: 500;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 992px) {
+    .wrapper {
+        height: 86vh;
+        width: 50vw;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        height: 82.5vh;
+        width: 82.5vw;
+    }
+}
